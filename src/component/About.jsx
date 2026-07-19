@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
@@ -6,7 +7,7 @@ const About = () => {
         {/* About Us */}
 <section
   id="about"
-  className="bg-gradient-to-b from-green-50 to-white py-20 px-6 sm:px-10 lg:px-24 font-serif"
+  className="bg-gradient-to-b from-green-50 to-white py-20 px-8 sm:px-10 lg:px-24 font-serif max-w-7xl"
 >
   <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
@@ -35,10 +36,11 @@ const About = () => {
         ShopEase offers a seamless shopping experience with trusted products,
         secure payments, and fast delivery.
       </p>
-
+    <Link to="/cart">
       <button className="mt-8 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg transition duration-300 shadow-lg">
         Explore Products
       </button>
+      </Link>
     </div>
 
     {/* Right Side */}

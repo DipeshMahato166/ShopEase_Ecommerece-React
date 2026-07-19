@@ -10,7 +10,6 @@ import Home from './Dashboard/Home';
 
 
 
-
 const Slider = () => {
     return (
         <>

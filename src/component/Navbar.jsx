@@ -52,11 +52,11 @@ const Navbar = () => {
           ) : (
             <>
               <Link to="/login">
-                <Button props={{ text: "Login", bg: "bg-green-700" }} />
+                <Button props={{ text: "Login",font:" text-black" }} />
               </Link>
 
               <Link to="/signup">
-                <Button props={{ text: "Sign Up", bg: "bg-green-500" }} />
+                <Button props={{ text: "Sign Up", bg: "bg-green-500", font:"text-white" }} />
               </Link>
             </>
           )}
@@ -104,7 +104,7 @@ const Navbar = () => {
                 Logout
               </button>
             ) : (
-              <div className="flex flex-col gap-3 w-48">
+              <div className="flex flex-col justify-center items-center gap-3 w-48">
                 <Link to="/login" onClick={() => setMenuOpen(false)}>
                   <Button props={{ text: "Login", bg: "bg-green-700" }} />
                 </Link>

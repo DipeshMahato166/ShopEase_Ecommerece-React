@@ -28,7 +28,7 @@ const LoginPage = () => {
       password: "",
     });
 
-    navigate("/dashboard");
+    navigate("/");
   };
 
   return (

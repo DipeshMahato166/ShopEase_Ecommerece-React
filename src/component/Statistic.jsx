@@ -4,7 +4,7 @@ import { TbTruckDelivery } from 'react-icons/tb'
 
 const Statistic = () => {
   return (
-    <div><div className="bg-green-400/20 py-12">
+    <div><div className=" py-12">
 
     <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10">
 
