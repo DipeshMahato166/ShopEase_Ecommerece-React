@@ -97,7 +97,7 @@ const Contact = () => {
 
               <div className="flex items-center gap-3">
                 <MdPhone className="text-green-400 text-xl" />
-                <span>+977 98XXXXXXXX</span>
+                <span>+977 9812060473</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -131,7 +131,7 @@ const Contact = () => {
           </p>
 
           <p className="text-sm text-gray-400">
-            Designed with ❤️ for a better shopping experience.
+            Designed by dipesh with ❤️ for a better shopping experience.
           </p>
 
         </div>
