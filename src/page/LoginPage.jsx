@@ -1,72 +1,92 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const { login } = useContext(AuthContext);
-     const navigate = useNavigate();
+  const [loginData, setLoginData] = useState({
+    username: "",
+    password: "",
+  });
 
-    const [loginData, setLoginData] = useState({
-        username: "",
-        password: ""
-    })
+  const handleChange = (e) => {
+    setLoginData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
-    const handleChange = (e) => {
-        setLoginData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-        // console.log(`${e.target.name}: ${e.target.value}`)
-    }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const handleSubmit = async(e) => {
-        e.preventDefault()
+    await login(loginData);
 
-        const res = await login(loginData);
-        setLoginData({
-            username: "",
-            password: ""
-        })
-        navigate("/dashboard")
-    }
-    console.log(loginData);
+    setLoginData({
+      username: "",
+      password: "",
+    });
 
+    navigate("/dashboard");
+  };
 
-    return (
-        <div className="h-screen grid place-items-center bg-green-400/20 font-serif">
-            <form
-                onSubmit={handleSubmit}
-                className="w-100 p-8 h-100 bg-green-400/40 shadow-2xl flex flex-col justify-center items-center gap-10 rounded-2xl "
-            >
-                <h1 className='font-extrabold text-4xl flex justify-center items-center  text-slate-600'>Login </h1>
-                <input
-                    onChange={handleChange}
-                    className="p-2 w-full rounded-2xl border h-10"
-                    type="text"
-                    placeholder="Enter Email..."
-                    name="username"
-                    value={loginData.email}
-                    required
-                />
-                <input
-                    onChange={handleChange}
-                    className="p-2 w-full rounded-2xl border h-10"
-                    type="password"
-                    placeholder="Enter Password..."
-                    name="password"
-                    value={loginData.password}
-                    required
-                />
-                <button
-                    className="p-2 px-4 border w-full h-10 rounded-2xl text-white  bg-green-600 cursor-pointer hover:bg-green-700"
-                    type="submit">Submit
+  return (
+    <div className="min-h-screen bg-green-400/20 flex items-center justify-center px-4 sm:px-6 font-serif">
 
-                </button>
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 sm:p-8"
+      >
+        <h1 className="text-3xl sm:text-4xl font-bold text-center text-slate-700 mb-8">
+          Login
+        </h1>
 
+        <div className="space-y-5">
 
-            </form>
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter Username..."
+            value={loginData.username}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Password..."
+            value={loginData.password}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-green-600 hover:bg-green-700 transition text-white py-3 rounded-xl font-semibold"
+          >
+            Login
+          </button>
+
         </div>
-    )
-}
+
+        <p className="text-center mt-6 text-gray-600">
+          Don't have an account?{" "}
+          <Link
+            to="/signup"
+            className="text-green-600 font-semibold hover:underline"
+          >
+            Sign Up
+          </Link>
+        </p>
+
+      </form>
+
+    </div>
+  );
+};
 
 export default LoginPage;

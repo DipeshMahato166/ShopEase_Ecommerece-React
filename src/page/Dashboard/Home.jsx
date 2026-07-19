@@ -1,54 +1,56 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const Home = () => {
-    const [totalProducts, setTotalProducts]=useState(0)
-    const [totalUsers, setTotalUsers]=useState(0)
-    const [totalCarts, setTotalCarts]=useState(0)
+  const [totalProducts, setTotalProducts] = useState(0);
+  const [totalUsers, setTotalUsers] = useState(0);
+  const [totalCarts, setTotalCarts] = useState(0);
 
-const fetchData=async()=>{
-    try{
+  const fetchData = async () => {
+    try {
+      const res = await axios.get("https://fakestoreapi.com/products");
+      const userRes = await axios.get("https://fakestoreapi.com/users");
+      const cartRes = await axios.get("https://fakestoreapi.com/carts");
 
-        const res= await axios.get("https://fakestoreapi.com/products")
-        const userRes=await axios.get("https://fakestoreapi.com/users")
-        const cartRes=await axios.get("https://fakestoreapi.com/carts")
-        setTotalProducts(res.data.length)
-        setTotalUsers(userRes.data.length)
-        setTotalCarts(cartRes.data.length)
-
-    }catch(err){
-        console.log(err);
-        
+      setTotalProducts(res.data.length);
+      setTotalUsers(userRes.data.length);
+      setTotalCarts(cartRes.data.length);
+    } catch (err) {
+      console.log(err);
     }
+  };
 
-}
-
-useEffect(()=>{
-    fetchData()
-},[])
-
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
-    <>
-    <div className='h-screen p-10 flex font-serif  text-slate-700 gap-10'>
-    <div className='h-30 bg-green-400 w-50 rounded-2xl flex flex-col justify-center items-center gap-2 p-2'>
-        <span className=' font-bold text-4xl'>{totalProducts}</span>
-        <h1>Total Products</h1>
-    </div>
-    <div className='h-30 bg-green-400 w-50 flex flex-col justify-center items-center gap-2 rounded-2xl p-2'>
-         <span className=' font-bold text-4xl'>{totalUsers}</span>
-        <h1>Total Users</h1>
+    <div className="min-h-screen  p-4 sm:p-6 md:p-8">
+      <h1 className="text-2xl md:text-3xl font-bold text-slate-700 mb-8">
+        Dashboard
+      </h1>
 
-    </div>
-    <div className='h-30 bg-green-400 w-50 flex flex-col justify-center items-center gap-2 rounded-2xl p-2'>
-         <span className=' font-bold text-4xl'>{totalCarts}</span>
-        <h1>Total Carts</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Products */}
+        <div className="bg-green-500 rounded-2xl shadow-lg p-6 text-white hover:scale-105 transition duration-300">
+          <h2 className="text-lg font-semibold">Total Products</h2>
+          <p className="text-4xl font-bold mt-4">{totalProducts}</p>
+        </div>
 
-    </div>
-    </div>
-    </>
-  )
-}
+        {/* Users */}
+        <div className="bg-blue-500 rounded-2xl shadow-lg p-6 text-white hover:scale-105 transition duration-300">
+          <h2 className="text-lg font-semibold">Total Users</h2>
+          <p className="text-4xl font-bold mt-4">{totalUsers}</p>
+        </div>
 
-export default Home
+        {/* Carts */}
+        <div className="bg-purple-500 rounded-2xl shadow-lg p-6 text-white hover:scale-105 transition duration-300">
+          <h2 className="text-lg font-semibold">Total Carts</h2>
+          <p className="text-4xl font-bold mt-4">{totalCarts}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
