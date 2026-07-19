@@ -58,7 +58,7 @@ const Herosec = () => {
             </div>
 
             {/* //About us */}
-            <div className="font-serif text-slate-700  p-6 bg-green-400/60">
+            <div className="font-serif text-slate-700  p-6 bg-green-400/60 " id='about'>
                 <h1 className="text-4xl font-bold mb-4">About Us</h1>
 
                 <p className="mb-4">
@@ -88,7 +88,7 @@ const Herosec = () => {
             </div>
             {/* Contact us */}
 
-            <div className=" p-6 bg-[#6d8c6c] font-serif text-white h-60">
+            <div className=" p-6 bg-[#6d8c6c] font-serif text-white h-60 scroll-smooth" id='contact'>
                 <h1 className="text-4xl font-bold ">Contact Us</h1>
 
                 <div className="flex flex-col  text-xl gap-2 pt-3">

@@ -28,12 +28,13 @@ const Navbar = () => {
         <Link to='/cart'>
             <li className=' hover:text-green-400'> Products</li>
         </Link>
-      
-            <li className=' hover:text-green-400'>  About Us</li>
+            <a  className=' hover:text-green-400' href="#about">About Us</a>
+            {/* <li className=' hover:text-green-400' id='About'>  About Us</li> */}
         
         
-            <li className=' hover:text-green-400'>  Contact Us</li>
-        
+            {/* <li className=' hover:text-green-400'>  Contact Us</li> */}
+                    <a  className=' hover:text-green-400' href="#contact">Contact Us</a>
+
 
         </ul>
 
