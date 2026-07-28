@@ -29,15 +29,16 @@ const Navbar = () => {
           <Link to="/cart">
             <li className="hover:text-green-600 transition">Products</li>
           </Link>
-
-          <li  className="hover:text-green-600 transition">
-            About Us
-          </li>
-
-          <li  className="hover:text-green-600 transition">
-            Contact Us
-          </li>
-
+          <Link to='/about'>
+            <li className="hover:text-green-600 transition">
+              About Us
+            </li>
+          </Link>
+          <Link to='/contact'>
+            <li className="hover:text-green-600 transition">
+              Contact Us
+            </li>
+          </Link>
         </ul>
 
         {/* Desktop Buttons */}
@@ -52,11 +53,11 @@ const Navbar = () => {
           ) : (
             <>
               <Link to="/auth/login">
-                <Button props={{ text: "Login",font:" text-black" }} />
+                <Button props={{ text: "Login", font: " text-black" }} />
               </Link>
 
               <Link to="/auth/signup">
-                <Button props={{ text: "Sign Up", bg: "bg-green-500", font:"text-white" }} />
+                <Button props={{ text: "Sign Up", bg: "bg-green-500", font: "text-white" }} />
               </Link>
             </>
           )}
@@ -85,13 +86,13 @@ const Navbar = () => {
               Products
             </Link>
 
-            <a href="#about" onClick={() => setMenuOpen(false)}>
+            <Link to='/about' onClick={() => setMenuOpen(false)}>
               About Us
-            </a>
+            </Link>
 
-            <a href="#contact" onClick={() => setMenuOpen(false)}>
+            <Link to='/contact' onClick={() => setMenuOpen(false)}>
               Contact Us
-            </a>
+            </Link>
 
             {currentUser ? (
               <button
@@ -106,7 +107,7 @@ const Navbar = () => {
             ) : (
               <div className="flex flex-col justify-center items-center gap-3 w-48">
                 <Link to="/auth/login" onClick={() => setMenuOpen(false)}>
-                  <Button props={{ text: "Login", bg: "bg-green-700" }} />
+                  <Button props={{ text: "Login" }} />
                 </Link>
 
                 <Link to="/auth/signup" onClick={() => setMenuOpen(false)}>

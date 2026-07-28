@@ -30,11 +30,10 @@ const User = () => {
 
   return (
     <div className="p-6 font-serif">
-      <h1 className="text-2xl font-bold mb-4">User Table</h1>
 
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-300 shadow-md">
-          <thead className="bg-gray-200">
+          <thead className="">
             <tr>
               <th className="border p-3">ID</th>
               <th className="border p-3">Username</th>

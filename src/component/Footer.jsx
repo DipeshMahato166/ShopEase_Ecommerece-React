@@ -9,7 +9,7 @@ import {
 import { FaShopify } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
-const Contact = () => {
+const Footer = () => {
   return (
     <footer
       id="contact"
@@ -141,4 +141,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Footer;

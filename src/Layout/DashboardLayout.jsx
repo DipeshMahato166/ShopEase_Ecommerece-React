@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from '../page/Slider'
+import Slider from '../page/Dashboard/Slider'
 import { Outlet, useNavigate } from 'react-router-dom'
 
 

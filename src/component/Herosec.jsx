@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import Navbar from "./Navbar";
 import img from "../public/1.png";
-import Contact from "./Contact";
 import Statistic from "./Statistic";
 import About from "./About";
 

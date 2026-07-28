@@ -5,9 +5,9 @@ import Navbar from './component/Navbar'
 import Herosec from './component/Herosec'
 import Cart from './component/Cart'
 import SingleProduct from './component/SingleProduct'
-import LoginPage from './page/LoginPage'
-import Signup from './page/Signup'
-import Slider from './page/Slider'
+import LoginPage from './page/Auth/LoginPage'
+import Signup from './page/Auth/Signup'
+import Slider from './page/Dashboard/Slider'
 import DashboardLayout from './Layout/DashboardLayout'
 import Product from './page/Dashboard/Product'
 import Update from './page/Dashboard/Update'
@@ -15,6 +15,8 @@ import User from './page/Dashboard/User'
 import Home from './page/Dashboard/Home'
 import HomeLayout from './Layout/HomeLayout'
 import NotFound from './page/NotFound'
+import AboutPage from './component/AboutPage'
+import ContactPage from './component/ContactPage'
 
 
 const App = () => {
@@ -34,6 +36,8 @@ const App = () => {
             <Route path='product/:id' element={<Update />} />
             <Route path='user' element={<User />} />
             <Route path='home' element={<Home />} />
+            <Route path='about' element={<AboutPage />} />
+            <Route path='contact' element={<ContactPage />} />
           </Route>
 
           <Route path='/dashboard' element={<DashboardLayout />} >
