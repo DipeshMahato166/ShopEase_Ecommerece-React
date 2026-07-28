@@ -10,7 +10,7 @@ import About from "./About";
 const Herosec = () => {
   return (
     <>
-      <Navbar />
+      
 
       <section className="bg-green-400/20 min-h-screen pt-35 flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 px-6 sm:px-10 lg:px-20 py-24">
 
@@ -72,7 +72,7 @@ const Herosec = () => {
       </section>
       <Statistic/>
       <About/>
-      <Contact/>
+      
     </>
   );
 };

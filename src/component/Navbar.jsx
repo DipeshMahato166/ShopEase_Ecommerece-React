@@ -30,13 +30,13 @@ const Navbar = () => {
             <li className="hover:text-green-600 transition">Products</li>
           </Link>
 
-          <a href="#about" className="hover:text-green-600 transition">
+          <li  className="hover:text-green-600 transition">
             About Us
-          </a>
+          </li>
 
-          <a href="#contact" className="hover:text-green-600 transition">
+          <li  className="hover:text-green-600 transition">
             Contact Us
-          </a>
+          </li>
 
         </ul>
 

@@ -30,7 +30,7 @@ const SingleProduct = () => {
   if (loading) {
     return (
       <>
-        <Navbar />
+        
         <div className="min-h-screen flex justify-center items-center bg-green-400/20">
           <h1 className="text-3xl font-bold font-serif text-slate-600">
             Loading...
@@ -42,7 +42,7 @@ const SingleProduct = () => {
 
   return (
     <>
-      <Navbar />
+      
 
       <div className="bg-green-400/20 min-h-screen pt-24 pb-10">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
