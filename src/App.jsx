@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 
 import Navbar from './component/Navbar'
 import Herosec from './component/Herosec'
@@ -29,8 +29,7 @@ const App = () => {
             <Route index element={<Herosec />} />
             <Route path='cart' element={<Cart />} />
             <Route path='cart/:id' element={<SingleProduct />} />
-            <Route path='login' element={<LoginPage />} />
-            <Route path='signup' element={<Signup />} />
+           
             <Route path='product' element={<Product />} />
             <Route path='product/:id' element={<Update />} />
             <Route path='user' element={<User />} />
@@ -44,6 +43,11 @@ const App = () => {
             <Route path='user' element={<User />} />
             <Route path='slider' element={<Slider />} />
 
+
+          </Route>
+          <Route path='/auth' element={<Outlet/>}>
+           <Route path='login' element={<LoginPage />} />
+            <Route path='signup' element={<Signup />} />
 
           </Route>
           <Route path='*' element={<NotFound />} />

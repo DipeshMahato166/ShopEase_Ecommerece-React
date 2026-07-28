@@ -51,11 +51,11 @@ const Navbar = () => {
             </button>
           ) : (
             <>
-              <Link to="/login">
+              <Link to="/auth/login">
                 <Button props={{ text: "Login",font:" text-black" }} />
               </Link>
 
-              <Link to="/signup">
+              <Link to="/auth/signup">
                 <Button props={{ text: "Sign Up", bg: "bg-green-500", font:"text-white" }} />
               </Link>
             </>
