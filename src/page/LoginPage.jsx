@@ -76,7 +76,7 @@ const LoginPage = () => {
         <p className="text-center mt-6 text-gray-600">
           Don't have an account?{" "}
           <Link
-            to="/signup"
+            to="/auth/signup"
             className="text-green-600 font-semibold hover:underline"
           >
             Sign Up

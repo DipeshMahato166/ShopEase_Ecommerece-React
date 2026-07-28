@@ -105,11 +105,11 @@ const Navbar = () => {
               </button>
             ) : (
               <div className="flex flex-col justify-center items-center gap-3 w-48">
-                <Link to="/login" onClick={() => setMenuOpen(false)}>
+                <Link to="/auth/login" onClick={() => setMenuOpen(false)}>
                   <Button props={{ text: "Login", bg: "bg-green-700" }} />
                 </Link>
 
-                <Link to="/signup" onClick={() => setMenuOpen(false)}>
+                <Link to="/auth/signup" onClick={() => setMenuOpen(false)}>
                   <Button props={{ text: "Sign Up", bg: "bg-green-500" }} />
                 </Link>
               </div>
